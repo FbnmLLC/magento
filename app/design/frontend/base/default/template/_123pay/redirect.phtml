@@ -1,0 +1,28 @@
+<?php
+/**
+ * Magento
+ * @category   Payment
+ * @package    Pdt__123pay
+ * @copyright  Copyright (c) 2013 123pay Development Team
+ * @see http://123pay.ir
+ */
+?>
+<center>
+    <b>در حال اتصال به درگاه یک دو سه پی</b>
+    <br/>
+    لطفا منتظر بمانید
+</center>
+<form id="pdt__123pay" action="<?php echo $this->getFormAction(); ?>" method="POST">
+	<?php if ( is_array( $this->getFormData() ) ): ?>
+		<?php foreach ( $this->getFormData() as $name => $value ): ?>
+            <input type="hidden" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/>
+		<?php endforeach; ?>
+	<?php endif; ?>
+</form>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var paymentform = document.getElementById('pdt__123pay');
+    window.onload = paymentform.submit();
+    //]]>
+</script>

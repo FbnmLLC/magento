@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ * @category   Payment
+ * @package    Pdt__123pay
+ * @copyright  Copyright (c) 2013 123pay Development Team
+ * @see http://123pay.ir
+ */
+-->
+<config>
+    <modules>
+        <Pdt__123pay>
+            <version>1.0.0</version>
+        </Pdt__123pay>
+    </modules>
+
+    <global>
+        <models>
+            <_123pay>
+                <class>Pdt__123pay_Model</class>
+            </_123pay>
+        </models>
+        <helpers>
+            <_123pay>
+                <class>Pdt__123pay_Helper</class>
+            </_123pay>
+        </helpers>
+        <resources>
+            <_123pay_setup>
+                <setup>
+                    <module>Pdt__123pay</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </_123pay_setup>
+            <_123pay_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </_123pay_write>
+            <_123pay_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </_123pay_read>
+        </resources>
+        <blocks>
+            <_123pay>
+                <class>Pdt__123pay_Block</class>
+            </_123pay>
+        </blocks>
+    </global>
+
+    <frontend>
+        <routers>
+            <_123pay>
+                <use>standard</use>
+                <args>
+                    <module>Pdt__123pay</module>
+                    <frontName>_123pay</frontName>
+                </args>
+            </_123pay>
+        </routers>
+        <translate>
+            <modules>
+                <Pdt__123pay>
+                    <files>
+                        <default>Pdt__123pay.csv</default>
+                    </files>
+                </Pdt__123pay>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <_123pay>
+                    <file>_123pay.xml</file>
+                </_123pay>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Pdt__123pay>
+                    <files>
+                        <default>Pdt__123pay.csv</default>
+                    </files>
+                </Pdt__123pay>
+            </modules>
+        </translate>
+    </adminhtml>
+    <phoenix>
+        <_123pay>
+            <verify_url>http://123pay.ir</verify_url>
+        </_123pay>
+    </phoenix>
+    <default>
+        <payment>
+            <_123pay>
+                <active>0</active>
+                <model>_123pay/_123pay</model>
+                <order_status>1</order_status>
+                <title>سامانه پرداخت یک دو سه پی</title>
+                <allowspecific>0</allowspecific>
+                <use_store_currency>0</use_store_currency>
+            </_123pay>
+        </payment>
+    </default>
+</config>

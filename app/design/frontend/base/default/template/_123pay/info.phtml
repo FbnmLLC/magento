@@ -1,0 +1,15 @@
+<?php
+/**
+ * Magento
+ * @category   Payment
+ * @package    Pdt__123pay
+ * @copyright  Copyright (c) 2013 123pay Development Team
+ * @see http://123pay.ir
+ */
+echo $this->getMethod()->getTitle() . '<br/>';
+if ( $this->getInfo()->getLastTransId() == '' ) {
+	echo '<em>' . "به درگاه یک دو سه پی ارجاع داده خواهید شد" . '</em>';
+} else {
+	echo $this->__( 'شماره تراکنش یک دو سه پی: %s', $this->htmlEscape( $this->getInfo()->getLastTransId() ) ) . '<br/>';
+}
+?>
