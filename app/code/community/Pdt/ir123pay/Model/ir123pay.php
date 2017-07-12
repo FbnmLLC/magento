@@ -3,16 +3,16 @@
 /**
  * Magento
  * @category   Payment
- * @package    Pdt__123pay
+ * @package    Pdt_ir123pay
  * @copyright  Copyright (c) 2013 123pay Development Team
  * @see http://123pay.ir
  */
-class Pdt__123pay_Model__123pay extends Mage_Payment_Model_Method_Abstract {
+class Pdt_ir123pay_Model_ir123pay extends Mage_Payment_Model_Method_Abstract {
 
-	protected $_code = '_123pay';
+	protected $_code = 'ir123pay';
 
-	protected $_formBlockType = '_123pay/form';
-	protected $_infoBlockType = '_123pay/info';
+	protected $_formBlockType = 'ir123pay/form';
+	protected $_infoBlockType = 'ir123pay/info';
 
 	protected $_isGateway = false;
 	protected $_canAuthorize = false;
@@ -37,7 +37,7 @@ class Pdt__123pay_Model__123pay extends Mage_Payment_Model_Method_Abstract {
 	}
 
 	public function getOrderPlaceRedirectUrl() {
-		return Mage::getUrl( '_123pay/processing/redirect', array( '_secure' => true ) );
+		return Mage::getUrl( 'ir123pay/processing/redirect', array( '_secure' => true ) );
 	}
 
 	public function capture( Varien_Object $payment, $amount ) {
@@ -64,7 +64,7 @@ class Pdt__123pay_Model__123pay extends Mage_Payment_Model_Method_Abstract {
 		$pEndPos     = strpos( $premiumLink, '/', $pStartPos + 3 );
 		$premiumPart = substr( $premiumLink, 0, $pEndPos + 1 );
 
-		preg_match( '/^http[s]?:\/\/[a-z0-9._-]*\/(.*)$/i', Mage::getUrl( '_123pay/processing/response', array( '_secure' => true ) ), $matches );
+		preg_match( '/^http[s]?:\/\/[a-z0-9._-]*\/(.*)$/i', Mage::getUrl( 'ir123pay/processing/response', array( '_secure' => true ) ), $matches );
 		$url = $premiumPart . $matches[1];
 
 		return $url;
@@ -82,7 +82,7 @@ class Pdt__123pay_Model__123pay extends Mage_Payment_Model_Method_Abstract {
 		$params = array(
 			'price'               => $price,
 			'cb_currency'         => $currency,
-			'cb_content_name_utf' => Mage::helper( '_123pay' )->__( 'Your purchase at' ) . ' ' . Mage::app()->getStore()->getName(),
+			'cb_content_name_utf' => Mage::helper( 'ir123pay' )->__( 'Your purchase at' ) . ' ' . Mage::app()->getStore()->getName(),
 			'externalBDRID'       => $this->getOrder()->getRealOrderId() . '-' . $this->getOrder()->getQuoteId(),
 		);
 

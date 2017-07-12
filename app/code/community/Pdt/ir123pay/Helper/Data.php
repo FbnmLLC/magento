@@ -3,11 +3,11 @@
 /**
  * Magento
  * @category   Payment
- * @package    Pdt__123pay
+ * @package    Pdt_ir123pay
  * @copyright  Copyright (c) 2013 123pay Development Team
  * @see http://123pay.ir
  */
-class Pdt__123pay_Helper_Data extends Mage_Payment_Helper_Data {
+class Pdt_ir123pay_Helper_Data extends Mage_Payment_Helper_Data {
 	public function getPendingPaymentStatus() {
 		if ( version_compare( Mage::getVersion(), '1.4.0', '<' ) ) {
 			return Mage_Sales_Model_Order::STATE_HOLDED;

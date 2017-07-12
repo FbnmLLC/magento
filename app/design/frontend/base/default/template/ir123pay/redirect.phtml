@@ -2,7 +2,7 @@
 /**
  * Magento
  * @category   Payment
- * @package    Pdt__123pay
+ * @package    Pdt_ir123pay
  * @copyright  Copyright (c) 2013 123pay Development Team
  * @see http://123pay.ir
  */
@@ -12,7 +12,7 @@
     <br/>
     لطفا منتظر بمانید
 </center>
-<form id="pdt__123pay" action="<?php echo $this->getFormAction(); ?>" method="POST">
+<form id="pdt_ir123pay" action="<?php echo $this->getFormAction(); ?>" method="POST">
 	<?php if ( is_array( $this->getFormData() ) ): ?>
 		<?php foreach ( $this->getFormData() as $name => $value ): ?>
             <input type="hidden" name="<?php echo $name; ?>" value="<?php echo $value; ?>"/>
@@ -22,7 +22,7 @@
 
 <script type="text/javascript">
     //<![CDATA[
-    var paymentform = document.getElementById('pdt__123pay');
+    var paymentform = document.getElementById('pdt_ir123pay');
     window.onload = paymentform.submit();
     //]]>
 </script>

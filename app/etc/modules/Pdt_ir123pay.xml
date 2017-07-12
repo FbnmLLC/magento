@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Pdt__123pay>
+        <Pdt_ir123pay>
             <active>true</active>
             <codePool>community</codePool>
-        </Pdt__123pay>
+        </Pdt_ir123pay>
     </modules>
 </config>

@@ -1,8 +1,8 @@
 <?php
 
-class Pdt__123pay_ProcessingController extends Mage_Core_Controller_Front_Action {
-	protected $_successBlockType = '_123pay/success';
-	protected $_failureBlockType = '_123pay/failure';
+class Pdt_ir123pay_ProcessingController extends Mage_Core_Controller_Front_Action {
+	protected $_successBlockType = 'ir123pay/success';
+	protected $_failureBlockType = 'ir123pay/failure';
 
 	protected $_order = null;
 	protected $_paymentInst = null;
@@ -34,7 +34,7 @@ class Pdt__123pay_ProcessingController extends Mage_Core_Controller_Front_Action
 				$order->setState(
 					Mage_Sales_Model_Order::STATE_PENDING_PAYMENT,
 					$this->_getPendingPaymentStatus(),
-					Mage::helper( '_123pay' )->__( 'Customer was redirected to 123pay gateway.' )
+					Mage::helper( 'ir123pay' )->__( 'Customer was redirected to 123pay gateway.' )
 				)->save();
 			}
 
@@ -99,7 +99,7 @@ class Pdt__123pay_ProcessingController extends Mage_Core_Controller_Front_Action
 					    ->save();
 				}
 
-				$this->_order->addStatusToHistory( $this->_paymentInst->getConfigData( 'order_status' ), Mage::helper( '_123pay' )->__( 'Payment complete' ) );
+				$this->_order->addStatusToHistory( $this->_paymentInst->getConfigData( 'order_status' ), Mage::helper( 'ir123pay' )->__( 'Payment complete' ) );
 
 				$this->_order->sendNewOrderEmail();
 				$this->_order->setEmailSent( true );
@@ -113,10 +113,10 @@ class Pdt__123pay_ProcessingController extends Mage_Core_Controller_Front_Action
 					     ->toHtml() );
 
 			} else {
-				$this->_redirect( '_123pay/processing/caberror' );
+				$this->_redirect( 'ir123pay/processing/caberror' );
 			}
 		} else {
-			$this->_redirect( '_123pay/processing/caberror' );
+			$this->_redirect( 'ir123pay/processing/caberror' );
 		}
 	}
 
@@ -213,6 +213,6 @@ class Pdt__123pay_ProcessingController extends Mage_Core_Controller_Front_Action
 	}
 
 	protected function _getPendingPaymentStatus() {
-		return Mage::helper( '_123pay' )->getPendingPaymentStatus();
+		return Mage::helper( 'ir123pay' )->getPendingPaymentStatus();
 	}
 }

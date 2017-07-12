@@ -3,27 +3,27 @@
 /**
  * Magento
  * @category   Payment
- * @package    Pdt__123pay
+ * @package    Pdt_ir123pay
  * @copyright  Copyright (c) 2013 123pay Development Team
  * @see http://123pay.ir
  */
 -->
 <layout version="0.1.0">
-<_123pay_processing_failure>
+<ir123pay_processing_failure>
     <reference name="root">
         <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
     </reference>
     <reference name="content">
-        <block type="_123pay/failure" name="_123pay_failure" template="_123pay/failure.phtml">
+        <block type="ir123pay/failure" name="ir123pay_failure" template="ir123pay/failure.phtml">
         </block>
     </reference>
-</_123pay_processing_failure>
-<_123pay_processing_redirect>
+</ir123pay_processing_failure>
+<ir123pay_processing_redirect>
     <reference name="root">
-        <action method="setTemplate"><template>_123pay/blank.phtml</template></action>
+        <action method="setTemplate"><template>ir123pay/blank.phtml</template></action>
     </reference>
     <reference name="content">
-        <block type="_123pay/redirect" name="_123pay_redirect" template="_123pay/redirect.phtml" />
+        <block type="ir123pay/redirect" name="ir123pay_redirect" template="ir123pay/redirect.phtml" />
     </reference>
-</_123pay_processing_redirect>
+</ir123pay_processing_redirect>
 </layout>

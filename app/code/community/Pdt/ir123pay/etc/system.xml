@@ -3,7 +3,7 @@
 /**
  * Magento
  * @category   Payment
- * @package    Pdt__123pay
+ * @package    Pdt_ir123pay
  * @copyright  Copyright (c) 2013 123pay Development Team
  * @see http://123pay.ir
  */
@@ -12,7 +12,7 @@
     <sections>
         <payment>
             <groups>
-                <_123pay translate="label comment" module="payment">
+                <ir123pay translate="label comment" module="payment">
                     <label>سامانه پرداخت یک دو سه پی</label>
                     <comment>&lt;strong&gt;Please note&lt;/strong&gt;: All rights of this module belong to 123pay
                         Development Team &lt;a href="mailto:plugins@123pay.ir" target="_blank"&gt;plugins@123pay.ir&lt;/a&gt;
@@ -61,14 +61,14 @@
                             <label>Merchant ID</label>
                             <comment>like XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX</comment>
                             <frontend_type>text</frontend_type>
-                            <backend_model>_123pay/config_backend_merchantid</backend_model>
+                            <backend_model>ir123pay/config_backend_merchantid</backend_model>
                             <sort_order>8</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </merchant_id>
                     </fields>
-                </_123pay>
+                </ir123pay>
             </groups>
         </payment>
     </sections>

@@ -1,6 +1,6 @@
 <?php
 
-class Pdt__123pay_Block_Redirect extends Mage_Core_Block_Template {
+class Pdt_ir123pay_Block_Redirect extends Mage_Core_Block_Template {
 	protected function _getCheckout() {
 		return Mage::getSingleton( 'checkout/session' );
 	}
@@ -48,7 +48,7 @@ class Pdt__123pay_Block_Redirect extends Mage_Core_Block_Template {
 		$price        = round( $order["grand_total"], 0 );
 		$amount       = $price;
 		$callBackUrl  = Mage::getBaseUrl( Mage_Core_Model_Store::URL_TYPE_LINK );
-		$callBackUrl  .= "_123pay/processing/response/";
+		$callBackUrl  .= "ir123pay/processing/response/";
 		$callback_url = urlencode( $callBackUrl );
 
 		$ch = curl_init();
@@ -67,7 +67,7 @@ class Pdt__123pay_Block_Redirect extends Mage_Core_Block_Template {
 			$_SESSION['order_id'] = $order["entity_id"];
 			$return               = $result->payment_url;
 		} else {
-			Mage::log( '_123pay ERR: ' . $result->message );
+			Mage::log( 'ir123pay ERR: ' . $result->message );
 			echo $result->message;
 		}
 

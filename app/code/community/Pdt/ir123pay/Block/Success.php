@@ -1,6 +1,6 @@
 <?php
 
-class Pdt__123pay_Block_Success extends Mage_Core_Block_Template
+class Pdt_ir123pay_Block_Success extends Mage_Core_Block_Template
 {
     protected function _toHtml()
     {
